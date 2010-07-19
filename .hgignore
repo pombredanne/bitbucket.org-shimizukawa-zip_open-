@@ -1,0 +1,7 @@
+.pyc
+.swp
+bin
+build
+develop-eggs
+dist
+src/zip_open.egg-info
