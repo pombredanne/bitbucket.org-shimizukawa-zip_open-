@@ -105,7 +105,7 @@ Requirements and dependencies
 
 ToDo
 -----
-* Write tests.
+* Add module import feature.
 
 
 History
