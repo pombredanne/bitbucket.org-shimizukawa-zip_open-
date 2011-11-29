@@ -17,8 +17,8 @@ data.zip file.
 Features
 --------
 
-* Open file from nested zip file archive path/name.
-* Open file from nested zip file archive data or fileobj.
+* Open file from nested zip archive file path/name.
+* Open file from nested zip archive file-like-object.
 
 
 Using sample1: open the file from zip file
@@ -37,7 +37,13 @@ Open file1.txt::
    >>> print data
    I am file1.txt, ok.
 
-This code sample equivalent to below code::
+You can specifiy zopen subpath args:
+
+   >>> fobj = zopen('packages1.zip', 'file1.txt')
+   >>> print fobj.read()
+   I am file1.txt, ok.
+
+These code samples equivalent to below code::
 
    >>> from zipfile import ZipFile
    >>> zipobj = ZipFile('packages1.zip')
@@ -63,15 +69,21 @@ Open file2.txt::
    I am file2.txt, ok.
 
 
-If you want to open from zip-file-data, you can call::
-
-   >>> zip_payload = open('packages2.zip').read()
-   >>> fobj = zopen(zip_payload, 'data2.zip/file2.txt')
-
-or you also call::
+If you want to open from file-like-object, you can call::
 
    >>> zip_fileobj = open('packages2.zip')
    >>> fobj = zopen(zip_fileobj, 'data2.zip/file2.txt')
+   >>> print fobj.read()
+   I am file2.txt, ok.
+
+then you also call::
+
+   >>> from StringIO import StringIO
+   >>> zip_payload = open('packages2.zip').read()
+   >>> zip_fileobj = StringIO(zip_payload)
+   >>> fobj = zopen(zip_fileobj, 'data2.zip/file2.txt')
+   >>> print fobj.read()
+   I am file2.txt, ok.
 
 
 Using sample3: open the file included in package oneself
@@ -127,7 +139,7 @@ History
 
 0.2.0 (2011-11-29)
 ~~~~~~~~~~~~~~~~~~
-* Add feature: open from fileobj / data.
+* Add feature: open from file-like-object.
 
 
 0.1.0 (2010-7-19)

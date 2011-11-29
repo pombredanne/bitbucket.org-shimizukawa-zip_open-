@@ -8,14 +8,23 @@ except:
 
 __all__ = ['zopen', 'zip_open']
 
-def zopen(path):
-    if os.path.exists(path):
-        return open(path, 'rb')
+def zopen(path_or_fobj, subpath=''):
+    if isinstance(path_or_fobj, basestring):
+        path = os.path.join(path_or_fobj, subpath)
+        if os.path.exists(path):
+            return open(path, 'rb')
+        else:
+            importer = zipimporter(path)
+            zipobj = ZipFile(importer.archive)
+            path = importer.prefix
+            return zip_open(zipobj, path)
     else:
-        importer = zipimporter(path)
-        zipobj = ZipFile(importer.archive)
-        path = importer.prefix
-        return zip_open(zipobj, path)
+        fobj = path_or_fobj
+        if subpath:
+            zipobj = ZipFile(fobj)
+            return zip_open(zipobj, subpath)
+        else:
+            return fobj
 
 
 def path_finder(path):
