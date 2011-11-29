@@ -17,7 +17,8 @@ data.zip file.
 Features
 --------
 
-* Open file from nested zip file archive.
+* Open file from nested zip file archive path/name.
+* Open file from nested zip file archive data or fileobj.
 
 
 Using sample1: open the file from zip file
@@ -60,6 +61,17 @@ Open file2.txt::
    >>> fobj = zopen('packages2.zip/data2.zip/file2.txt')
    >>> print fobj.read()
    I am file2.txt, ok.
+
+
+If you want to open from zip-file-data, you can call::
+
+   >>> zip_payload = open('packages2.zip').read()
+   >>> fobj = zopen(zip_payload, 'data2.zip/file2.txt')
+
+or you also call::
+
+   >>> zip_fileobj = open('packages2.zip')
+   >>> fobj = zopen(zip_fileobj, 'data2.zip/file2.txt')
 
 
 Using sample3: open the file included in package oneself
@@ -105,11 +117,18 @@ Requirements and dependencies
 
 ToDo
 -----
+* Add tar.gz file support.
+* Add using sample document for egg archive.
 * Add module import feature.
 
 
 History
 -------
+
+0.2.0 (2011-11-29)
+~~~~~~~~~~~~~~~~~~
+* Add feature: open from fileobj / data.
+
 
 0.1.0 (2010-7-19)
 ~~~~~~~~~~~~~~~~~~
