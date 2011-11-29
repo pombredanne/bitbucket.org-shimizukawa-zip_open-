@@ -24,7 +24,8 @@ setup(
     author_email='shimizukawa at gmail.com',
     url='http://bitbucket.org/shimizukawa/zip_open/',
     license='Apache License 2.0',
-    py_modules=['zip_open'],
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     zip_safe=True,
     test_suite='tests',
 )

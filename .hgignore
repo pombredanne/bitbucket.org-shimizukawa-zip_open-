@@ -4,4 +4,4 @@ bin
 build
 develop-eggs
 dist
-zip_open.egg-info
+src/zip_open.egg-info
