@@ -5,7 +5,7 @@ python code, Your program will become like
 ``open(os.path.join(os.path.dirname(__file__), 'data.zip'))``.
 But if your packages are packed into packages.zip file (zipped-egg,
 or cases to gather in one file on Google App Engine matter), your
-cord doesn't work fine.
+code doesn't work fine.
 
 In this situation, the file path of data.zip becomes
 `/path/to/packages.zip/data.zip`, then your program can't open the
