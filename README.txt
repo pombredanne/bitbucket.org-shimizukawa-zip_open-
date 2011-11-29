@@ -139,6 +139,7 @@ History
 
 0.2.0 (2011-11-29)
 ~~~~~~~~~~~~~~~~~~
+* Change license from PSL to Apache License 2.0
 * Add feature: open from file-like-object.
 
 

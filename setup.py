@@ -8,7 +8,7 @@ long_description = open("README.txt").read()
 classifiers = [
    "Development Status :: 4 - Beta",
    "Intended Audience :: Developers",
-   "License :: OSI Approved :: Python Software Foundation License",
+   "License :: OSI Approved :: Apache Software License",
    "Programming Language :: Python",
    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
@@ -23,7 +23,7 @@ setup(
     author='Takayuki SHIMIZUKAWA',
     author_email='shimizukawa at gmail.com',
     url='http://bitbucket.org/shimizukawa/zip_open/',
-    license='PSL',
+    license='Apache License 2.0',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     zip_safe=True,
