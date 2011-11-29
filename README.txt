@@ -37,7 +37,7 @@ Open file1.txt::
    >>> print data
    I am file1.txt, ok.
 
-You can specifiy zopen subpath args:
+You can specifiy zopen subpath args::
 
    >>> fobj = zopen('packages1.zip', 'file1.txt')
    >>> print fobj.read()
@@ -131,6 +131,7 @@ ToDo
 -----
 * Add tar.gz file support.
 * Add using sample document for egg archive.
+* Support Python3
 * Add module import feature.
 
 
