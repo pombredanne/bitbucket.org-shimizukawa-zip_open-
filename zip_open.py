@@ -6,6 +6,7 @@ try:
 except:
     from StringIO import StringIO
 
+__version__ = '0.2.0'
 __all__ = ['zopen', 'zip_open']
 
 def zopen(path_or_fobj, subpath=''):
