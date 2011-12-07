@@ -71,7 +71,7 @@ Open file2.txt::
 
 If you want to open from file-like-object, you can call::
 
-   >>> zip_fileobj = open('packages2.zip')
+   >>> zip_fileobj = open('packages2.zip', 'rb')
    >>> fobj = zopen(zip_fileobj, 'data2.zip/file2.txt')
    >>> print fobj.read()
    I am file2.txt, ok.
@@ -79,7 +79,7 @@ If you want to open from file-like-object, you can call::
 then you also call::
 
    >>> from StringIO import StringIO
-   >>> zip_payload = open('packages2.zip').read()
+   >>> zip_payload = open('packages2.zip', 'rb').read()
    >>> zip_fileobj = StringIO(zip_payload)
    >>> fobj = zopen(zip_fileobj, 'data2.zip/file2.txt')
    >>> print fobj.read()
