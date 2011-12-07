@@ -138,6 +138,11 @@ ToDo
 History
 -------
 
+0.2.1 (Unreleased)
+~~~~~~~~~~~~~~~~~~
+* fixed: test broken (open file as binary)
+* use distutils.core.setup if no setuptools.
+
 0.2.0 (2011-11-29)
 ~~~~~~~~~~~~~~~~~~
 * Change license from PSL to Apache License 2.0
