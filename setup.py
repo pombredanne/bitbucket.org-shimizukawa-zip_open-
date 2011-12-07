@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
 import os
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 version = '0.2.0'
 long_description = open("README.txt").read()
