@@ -3,7 +3,7 @@ import sys, os, doctest, unittest
 
 def setUp(args):
     here = os.path.dirname(os.path.abspath(__file__))
-    sys.path.insert(0, os.path.join(here, '..', 'src'))
+    sys.path.insert(0, os.path.join(here, '..'))
     os.chdir(here)
 
 
